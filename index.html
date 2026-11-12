@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro SP Express • 26 e 27 Nov 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        metroBlue: '#0455A1',
+                        metroRed: '#EE3E34',
+                        metroGreen: '#008061',
+                        metroYellow: '#FFD000',
+                        cptmJade: '#00A88F',
+                        neonPurple: '#9333EA',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for sleek mobile look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+        .step-card.completed {
+            opacity: 0.65;
+        }
+        .step-card.completed .step-title {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen pb-16 selection:bg-purple-500 selection:text-white">
+
+    <!-- Header & Key Trip Info -->
+    <header class="bg-gradient-to-br from-slate-900 via-slate-900 to-purple-950/50 border-b border-slate-800/80 pt-5 pb-6 px-4 sticky top-0 z-30 backdrop-blur-md">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex items-center justify-between gap-2 mb-3">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2.5 py-0.5 rounded-full">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+                        26 – 27 Nov 2026
+                    </span>
+                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white mt-1">
+                        Roteiro SP Express
+                    </h1>
+                </div>
+                <!-- Progress Pill -->
+                <div class="text-right bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-2xl">
+                    <div class="text-[11px] text-slate-400 font-medium">Progresso</div>
+                    <div class="text-sm font-bold text-emerald-400" id="progress-text">0/13 feitos</div>
+                </div>
+            </div>
+
+            <!-- Key Trip Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
+                <div class="bg-slate-900/80 border border-slate-800/90 rounded-xl p-2.5 flex items-start gap-2.5">
+                    <div class="p-1.5 rounded-lg bg-purple-500/15 text-purple-400 shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="font-semibold text-slate-200 truncate">Rua Riachuelo, 217</p>
+                        <p class="text-slate-400 truncate">Sé • Anfitriã Debora (Até 28/11 11h)</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/80 border border-slate-800/90 rounded-xl p-2.5 flex items-start gap-2.5">
+                    <div class="p-1.5 rounded-lg bg-blue-500/15 text-blue-400 shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="font-semibold text-slate-200 truncate">Chegada: 26/11 • 15h55</p>
+                        <p class="text-slate-400 truncate">Ônibus Ribeirão Preto → SP</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/80 border border-slate-800/90 rounded-xl p-2.5 flex items-start gap-2.5">
+                    <div class="p-1.5 rounded-lg bg-amber-500/15 text-amber-400 shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="font-semibold text-slate-200 truncate">GRU até 20h00 (27/11)</p>
+                        <p class="text-slate-400 truncate">Voo Fortaleza • Trem 19h00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="grid grid-cols-3 gap-1.5 bg-slate-900 p-1 rounded-2xl border border-slate-800 mt-3.5" role="tablist">
+                <button onclick="switchTab('quinta')" id="tab-quinta" role="tab" aria-selected="true"
+                    class="tab-btn py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-purple-600 text-white shadow-lg shadow-purple-950/50">
+                    Quinta (26/11)
+                </button>
+                <button onclick="switchTab('sexta')" id="tab-sexta" role="tab" aria-selected="false"
+                    class="tab-btn py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-slate-200">
+                    Sexta (27/11)
+                </button>
+                <button onclick="switchTab('info')" id="tab-info" role="tab" aria-selected="false"
+                    class="tab-btn py-2.5 px-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-slate-400 hover:text-slate-200">
+                    Metrô & Dicas
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-2xl mx-auto px-4 pt-5">
+
+        <!-- TAB 1: QUINTA-FEIRA -->
+        <section id="panel-quinta" class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-white">Chegada, Centro Histórico e Pista</h2>
+                    <p class="text-xs text-slate-400">Foco em deslocamento a pé, metrô e cena eletrônica econômica</p>
+                </div>
+                <span class="text-xs font-medium text-purple-300 bg-purple-950/60 border border-purple-800/60 px-2.5 py-1 rounded-full">6 etapas</span>
+            </div>
+
+            <div id="timeline-quinta" class="space-y-3.5"></div>
+        </section>
+
+        <!-- TAB 2: SEXTA-FEIRA -->
+        <section id="panel-sexta" class="space-y-4 hidden">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-white">Liberdade, MASP, Banho e Embarque</h2>
+                    <p class="text-xs text-slate-400">Atenção ao horário de retorno às 17h00 para pegar o trem das 19h00</p>
+                </div>
+                <span class="text-xs font-medium text-emerald-300 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-full">7 etapas</span>
+            </div>
+
+            <!-- Critical Alert Banner -->
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-3.5 flex items-start gap-3">
+                <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div class="text-xs text-amber-200/90 leading-relaxed">
+                    <strong class="text-amber-300 font-semibold">Ponto de Atenção:</strong> O trem <strong>Expresso Aeroporto</strong> sai da Estação Luz de hora em hora (às <strong>19h00 em ponto</strong>). Saia da Av. Paulista às 17h00 sem atrasos para tomar banho e fechar as malas com calma.
+                </div>
+            </div>
+
+            <div id="timeline-sexta" class="space-y-3.5"></div>
+        </section>
+
+        <!-- TAB 3: INFO & DICAS RÁPIDAS -->
+        <section id="panel-info" class="space-y-5 hidden">
+            
+            <!-- Subway Guide -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-4">
+                <div class="flex items-center gap-2.5">
+                    <div class="p-2 rounded-xl bg-blue-500/15 text-blue-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Guia Rápido de Baldeações</h3>
+                        <p class="text-xs text-slate-400">Todas as conexões usadas no seu roteiro</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-xs">
+                    <!-- Route 1 -->
+                    <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3 space-y-2">
+                        <div class="font-semibold text-slate-200 flex items-center justify-between">
+                            <span>1. Sé → Baixo Augusta / Club Jerome (Quinta 21h45)</span>
+                            <span class="text-slate-400 font-normal">~15 min</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-metroRed text-white font-semibold">Linha 3-Vermelha</span>
+                            <span class="text-slate-400">Sé → República (2 estações)</span>
+                            <span class="text-slate-500">➔</span>
+                            <span class="px-2 py-0.5 rounded bg-metroYellow text-slate-950 font-bold">Linha 4-Amarela</span>
+                            <span class="text-slate-400">República → Higienópolis-Mackenzie (1 estação)</span>
+                        </div>
+                    </div>
+
+                    <!-- Route 2 -->
+                    <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3 space-y-2">
+                        <div class="font-semibold text-slate-200 flex items-center justify-between">
+                            <span>2. Liberdade → Méqui 1000 / MASP (Sexta 12h15)</span>
+                            <span class="text-slate-400 font-normal">~20 min</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-metroBlue text-white font-semibold">Linha 1-Azul</span>
+                            <span class="text-slate-400">Japão-Liberdade → Paraíso (4 estações)</span>
+                            <span class="text-slate-500">➔</span>
+                            <span class="px-2 py-0.5 rounded bg-metroGreen text-white font-semibold">Linha 2-Verde</span>
+                            <span class="text-slate-400">Paraíso → Trianon-Masp ou Consolação</span>
+                        </div>
+                    </div>
+
+                    <!-- Route 3 -->
+                    <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3 space-y-2">
+                        <div class="font-semibold text-slate-200 flex items-center justify-between">
+                            <span>3. MASP → Hospedagem na Sé (Sexta 17h00)</span>
+                            <span class="text-slate-400 font-normal">~20 min</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-metroGreen text-white font-semibold">Linha 2-Verde</span>
+                            <span class="text-slate-400">Trianon-Masp → Paraíso</span>
+                            <span class="text-slate-500">➔</span>
+                            <span class="px-2 py-0.5 rounded bg-metroBlue text-white font-semibold">Linha 1-Azul</span>
+                            <span class="text-slate-400">Paraíso → Sé (5 estações)</span>
+                        </div>
+                    </div>
+
+                    <!-- Route 4 -->
+                    <div class="bg-slate-950/80 border border-slate-800/80 rounded-xl p-3 space-y-2">
+                        <div class="font-semibold text-slate-200 flex items-center justify-between">
+                            <span>4. Sé → Aeroporto Guarulhos (Sexta 18h20)</span>
+                            <span class="text-emerald-400 font-semibold">Tarifa comum!</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-1.5 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-metroBlue text-white font-semibold">Linha 1-Azul</span>
+                            <span class="text-slate-400">Sé → Luz (2 estações)</span>
+                            <span class="text-slate-500">➔</span>
+                            <span class="px-2 py-0.5 rounded bg-cptmJade text-white font-semibold">Linha 13-Jade (Expresso)</span>
+                            <span class="text-slate-400">Luz (19h00) → Aeroporto-Guarulhos (~35 min) + Ônibus gratuito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Google Maps Links -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3">
+                <div class="flex items-center gap-2.5">
+                    <div class="p-2 rounded-xl bg-emerald-500/15 text-emerald-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base">Atalhos Rápidos no Google Maps</h3>
+                        <p class="text-xs text-slate-400">Toque para abrir a rota direto no app de mapas</p>
+                    </div>
+                </div>
+
+                <div id="maps-shortcuts" class="grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+            </div>
+
+            <!-- Economy & Safety Tips -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3">
+                <h3 class="font-bold text-white text-base flex items-center gap-2">
+                    <span>💡</span> Dicas Essenciais de Economia e Segurança
+                </h3>
+                <ul class="space-y-2.5 text-xs text-slate-300 leading-relaxed">
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 font-bold">•</span>
+                        <span><strong>Bilhete de Metrô no Celular:</strong> Baixe o app <em>TOP</em> ou compre QR Codes nas máquinas/WhatsApp oficial para não pegar fila nas bilheterias.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 font-bold">•</span>
+                        <span><strong>Lista no Club Jerome:</strong> Confira o Instagram oficial do clube na semana do dia 26/11 para enviar seu nome na lista de desconto/VIP de início de noite.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 font-bold">•</span>
+                        <span><strong>Ingresso MASP:</strong> Garanta o ingresso antecipado pelo site oficial do museu (verifique elegibilidade de meia-entrada).</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-purple-400 font-bold">•</span>
+                        <span><strong>Atenção no Centro:</strong> Evite caminhar olhando o celular na Praça da Sé e arredores; entre em lojas ou estações para checar o mapa.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Reset Progress Button -->
+            <div class="pt-2 flex justify-center">
+                <button onclick="resetProgress()" class="text-xs text-slate-500 hover:text-rose-400 transition-colors underline underline-offset-4 py-2 px-4">
+                    Limpar marcações de progresso
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Feedback -->
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-slate-800 border border-slate-700 text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+        Progresso salvo!
+    </div>
+
+    <script>
+        // Dados completos e estruturados do roteiro
+        const itineraryData = {
+            quinta: [
+                {
+                    id: 'q1',
+                    time: '15h55 – 16h50',
+                    title: 'Chegada e Check-in',
+                    description: 'Chegada prevista do ônibus em São Paulo às 15h55. Deslocamento de metrô até a estação Sé para check-in na hospedagem na Rua Riachuelo, 217 e acomodar as malas no quarto.',
+                    transport: { label: 'Metrô Linha Azul', color: 'bg-metroBlue text-white' },
+                    tip: 'Anfitriã Debora • Checkout só vence sábado (28/11) às 11h00.',
+                    mapQuery: 'Rua Riachuelo, 217, Centro Histórico de São Paulo, SP'
+                },
+                {
+                    id: 'q2',
+                    time: '17h00 – 17h45',
+                    title: 'Catedral da Sé',
+                    description: 'Caminhada rápida de 5 minutos até a Catedral Metropolitana. Entrada gratuita (aberta até as 18h30).',
+                    transport: { label: 'A pé (5 min)', color: 'bg-slate-700 text-slate-200' },
+                    tip: 'Entrada 100% gratuita. Admire os vitrais e a arquitetura neogótica.',
+                    mapQuery: 'Catedral Metropolitana de São Paulo, Praça da Sé'
+                },
+                {
+                    id: 'q3',
+                    time: '18h00 – 19h45',
+                    title: 'Cultura Gratuita no Centro (CCBB)',
+                    description: 'Caminhada curta pelo calçadão até o Centro Cultural Banco do Brasil (CCBB), aberto até as 20h com entrada gratuita.',
+                    transport: { label: 'A pé (8 min)', color: 'bg-slate-700 text-slate-200' },
+                    tip: 'Exposições gratuitas no prédio histórico do Triângulo Histórico.',
+                    mapQuery: 'CCBB São Paulo, Rua Álvares Penteado, 112'
+                },
+                {
+                    id: 'q4',
+                    time: '20h00 – 21h30',
+                    title: 'Jantar Livre',
+                    description: 'Horário reservado para decidir na hora onde comer (no Centro Histórico antes de voltar ao quarto para trocar de roupa ou já na região da Consolação/Augusta).',
+                    transport: { label: 'A pé / Flexível', color: 'bg-amber-500/20 text-amber-300 border border-amber-500/30' },
+                    tip: 'Aproveite para passar no quarto na Rua Riachuelo caso queira trocar de roupa para a noite.',
+                    mapQuery: 'Rua Augusta, Consolação, São Paulo'
+                },
+                {
+                    id: 'q5',
+                    time: '21h45 – 23h15',
+                    title: 'Esquenta Barato no Baixo Augusta',
+                    description: 'Metrô na estação Sé (Linha Vermelha até República + baldeação Linha Amarela até Higienópolis-Mackenzie) e caminhada até o Bar do Netão (Rua Augusta) para esquenta econômico ouvindo DJs.',
+                    transport: { label: 'Metrô Vermelha + Amarela', color: 'bg-metroRed text-white' },
+                    tip: 'Esquenta econômico com som de DJs na Rua Augusta antes de ir para a pista.',
+                    mapQuery: 'Bar do Netão, Rua Augusta, 584, São Paulo'
+                },
+                {
+                    id: 'q6',
+                    time: '23h30 – 03h00',
+                    title: 'Pista Underground no Club Jerome',
+                    description: 'Caminhada de 7 minutos até o Club Jerome (Rua Mato Grosso). Volta: Uber curto direto para a Rua Riachuelo na madrugada.',
+                    transport: { label: 'A pé (7 min) • Volta Uber curto', color: 'bg-purple-600 text-white' },
+                    tip: 'Dica: conferir o Instagram oficial na semana para colocar nome na lista de desconto.',
+                    mapQuery: 'Club Jerome, Rua Mato Grosso, 398, Higienópolis, São Paulo'
+                }
+            ],
+            sexta: [
+                {
+                    id: 's1',
+                    time: '08h30 – 09h30',
+                    title: 'Café da Manhã Tradicional',
+                    description: 'Sair apenas com o essencial e caminhar menos de 5 minutos até a Padaria Santa Tereza (Praça Dr. João Mendes) para café com pão na chapa ou pingado gastando pouco.',
+                    transport: { label: 'A pé (< 5 min)', color: 'bg-slate-700 text-slate-200' },
+                    tip: 'A padaria mais antiga do Brasil, colada na sua hospedagem e com preços ótimos.',
+                    mapQuery: 'Padaria Santa Tereza, Praça Dr. João Mendes, 150, São Paulo'
+                },
+                {
+                    id: 's2',
+                    time: '09h45 – 12h15',
+                    title: 'Manhã na Liberdade',
+                    description: 'Seguir a pé (cerca de 10 minutos descendo a Av. da Liberdade) até a Praça da Liberdade. Explorar Rua Galvão Bueno, lojinhas orientais e mercados asiáticos.',
+                    transport: { label: 'A pé (10 min)', color: 'bg-slate-700 text-slate-200' },
+                    tip: 'Visite os mercadinhos orientais da Rua Galvão Bueno para snacks e bebidas diferentes.',
+                    mapQuery: 'Praça da Liberdade, São Paulo'
+                },
+                {
+                    id: 's3',
+                    time: '12h15 – 14h00',
+                    title: 'Deslocamento e Almoço no Méqui 1000',
+                    description: 'Metrô na estação Japão-Liberdade (Linha Azul até Paraíso + baldeação Linha Verde até Consolação ou Trianon-Masp) e ida ao Méqui 1000 (Av. Paulista, 1811) para almoçar no casarão histórico.',
+                    transport: { label: 'Metrô Azul + Verde', color: 'bg-metroGreen text-white' },
+                    tip: 'Fica a apenas 5 minutos de caminhada do MASP.',
+                    mapQuery: 'Méqui 1000, Avenida Paulista, 1811, São Paulo'
+                },
+                {
+                    id: 's4',
+                    time: '14h00 – 17h00',
+                    title: 'Tarde no MASP e Avenida Paulista',
+                    description: 'Caminhada de 5 minutos até o MASP (comprar ingresso online antecipado) e passeio pelo vão livre e Avenida Paulista.',
+                    transport: { label: 'A pé (5 min)', color: 'bg-slate-700 text-slate-200' },
+                    tip: 'Garanta o ingresso online antes para evitar filas. Fique de olho no relógio às 17h00!',
+                    mapQuery: 'MASP, Avenida Paulista, 1578, São Paulo'
+                },
+                {
+                    id: 's5',
+                    time: '17h00 – 18h20',
+                    title: 'Retorno ao Quarto, Banho e Malas',
+                    description: 'Voltar de metrô até a estação Sé e caminhar até a hospedagem na Rua Riachuelo, 217. Como o checkout só vence sábado (28/11) às 11h00, tomar banho com tranquilidade, fechar malas e avisar a anfitriã Debora sobre a saída.',
+                    transport: { label: 'Metrô Verde + Azul', color: 'bg-metroBlue text-white' },
+                    tip: 'Aproveite o quarto reservado até sábado para tomar um banho antes do voo.',
+                    mapQuery: 'Rua Riachuelo, 217, Centro Histórico de São Paulo, SP'
+                },
+                {
+                    id: 's6',
+                    time: '18h20 – 18h55',
+                    title: 'Deslocamento para a Estação Luz',
+                    description: 'Caminhar até a estação Sé e pegar a Linha Azul do metrô (sentido Tucuruvi) por 2 estações até a Estação Luz (acesso à plataforma CPTM).',
+                    transport: { label: 'Metrô Linha Azul (2 est.)', color: 'bg-metroBlue text-white' },
+                    tip: 'Siga as placas de integração gratuita para a CPTM Linha 13-Jade (Expresso Aeroporto).',
+                    mapQuery: 'Estação Luz, São Paulo'
+                },
+                {
+                    id: 's7',
+                    time: '19h00 – 19h55',
+                    title: 'Trem Direto para Guarulhos (Expresso Aeroporto)',
+                    description: 'Embarcar no Expresso Aeroporto (Linha 13-Jade) que sai às 19h00 em ponto (tarifa comum). Trajeto de ~35 min até Estação Aeroporto-Guarulhos + ônibus gratuito até o terminal de embarque, chegando por volta das 19h50/19h55 para o voo para Fortaleza.',
+                    transport: { label: 'Trem Expresso Aeroporto', color: 'bg-cptmJade text-white' },
+                    tip: 'Sai às 19h00 em ponto! Chegada perfeita antes do limite das 20h00.',
+                    mapQuery: 'Aeroporto Internacional de São Paulo Guarulhos'
+                }
+            ]
+        };
+
+        const quickLocations = [
+            { name: 'Hospedagem (Rua Riachuelo, 217)', tag: 'Base • Sé', query: 'Rua Riachuelo, 217, São Paulo' },
+            { name: 'Catedral da Sé', tag: 'Quinta 17h00', query: 'Catedral Metropolitana de São Paulo' },
+            { name: 'CCBB São Paulo', tag: 'Quinta 18h00', query: 'CCBB São Paulo' },
+            { name: 'Bar do Netão (Augusta)', tag: 'Quinta 21h45', query: 'Bar do Netão, Rua Augusta, 584' },
+            { name: 'Club Jerome', tag: 'Quinta 23h30', query: 'Club Jerome, Rua Mato Grosso, 398' },
+            { name: 'Padaria Santa Tereza', tag: 'Sexta 08h30', query: 'Padaria Santa Tereza, Praça Dr. João Mendes, 150' },
+            { name: 'Praça da Liberdade', tag: 'Sexta 09h45', query: 'Praça da Liberdade, São Paulo' },
+            { name: 'Méqui 1000 (Av. Paulista)', tag: 'Sexta 12h15', query: 'Méqui 1000, Avenida Paulista, 1811' },
+            { name: 'MASP', tag: 'Sexta 14h00', query: 'MASP, Avenida Paulista, 1578' },
+            { name: 'Estação Luz (Expresso GRU)', tag: 'Sexta 18h55', query: 'Estação Luz, São Paulo' }
+        ];
+
+        const STORAGE_KEY = 'sp_roteiro_nov2026_checked';
+        let checkedItems = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedItems));
+            updateProgressCounter();
+        }
+
+        function updateProgressCounter() {
+            const total = itineraryData.quinta.length + itineraryData.sexta.length;
+            const done = Object.values(checkedItems).filter(Boolean).length;
+            document.getElementById('progress-text').textContent = `${done}/${total} feitos`;
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 1800);
+        }
+
+        function toggleStep(id) {
+            checkedItems[id] = !checkedItems[id];
+            saveState();
+            const card = document.getElementById(`card-${id}`);
+            const checkbox = document.getElementById(`chk-${id}`);
+            if (card && checkbox) {
+                if (checkedItems[id]) {
+                    card.classList.add('completed');
+                    checkbox.checked = true;
+                    showToast('Etapa concluída!');
+                } else {
+                    card.classList.remove('completed');
+                    checkbox.checked = false;
+                }
+            }
+        }
+
+        function resetProgress() {
+            checkedItems = {};
+            saveState();
+            renderTimelines();
+            showToast('Progresso reiniciado');
+        }
+
+        function getMapsUrl(query) {
+            return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+        }
+
+        function createStepCard(step, index) {
+            const isDone = !!checkedItems[step.id];
+            return `
+                <article id="card-${step.id}" class="step-card ${isDone ? 'completed' : ''} bg-slate-900/95 border border-slate-800 hover:border-slate-700 rounded-2xl p-4 transition-all shadow-sm">
+                    <div class="flex items-start gap-3.5">
+                        <!-- Custom Accessible Checkbox -->
+                        <label class="relative flex items-center justify-center pt-0.5 cursor-pointer select-none">
+                            <input type="checkbox" id="chk-${step.id}" ${isDone ? 'checked' : ''} onchange="toggleStep('${step.id}')"
+                                class="peer sr-only">
+                            <div class="w-6 h-6 rounded-lg border-2 border-slate-600 bg-slate-950 peer-checked:bg-emerald-500 peer-checked:border-emerald-500 flex items-center justify-center transition-all">
+                                <svg class="w-4 h-4 text-slate-950 opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                        </label>
+
+                        <!-- Content -->
+                        <div class="flex-1 min-w-0 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-300 bg-purple-500/15 border border-purple-500/25 px-2.5 py-0.5 rounded-lg">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    ${step.time}
+                                </span>
+                                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${step.transport.color}">
+                                    ${step.transport.label}
+                                </span>
+                            </div>
+
+                            <h3 class="step-title text-base font-bold text-white leading-snug">
+                                ${index + 1}. ${step.title}
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                ${step.description}
+                            </p>
+
+                            <!-- Tip & Maps Action Row -->
+                            <div class="pt-1.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-800/80">
+                                <p class="text-[11px] text-slate-400 flex items-start gap-1.5">
+                                    <span class="text-amber-400 shrink-0">★</span>
+                                    <span>${step.tip}</span>
+                                </p>
+                                <a href="${getMapsUrl(step.mapQuery)}" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 px-3 py-1.5 rounded-xl transition-colors shrink-0">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Abrir Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderTimelines() {
+            const quintaEl = document.getElementById('timeline-quinta');
+            const sextaEl = document.getElementById('timeline-sexta');
+
+            quintaEl.innerHTML = itineraryData.quinta.map((step, i) => createStepCard(step, i)).join('');
+            sextaEl.innerHTML = itineraryData.sexta.map((step, i) => createStepCard(step, i)).join('');
+        }
+
+        function renderQuickMaps() {
+            const container = document.getElementById('maps-shortcuts');
+            container.innerHTML = quickLocations.map(loc => `
+                <a href="${getMapsUrl(loc.query)}" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center justify-between gap-2 bg-slate-950/90 hover:bg-slate-800/90 border border-slate-800 rounded-xl p-3 transition-colors group">
+                    <div class="min-w-0">
+                        <p class="text-xs font-semibold text-slate-200 group-hover:text-white truncate">${loc.name}</p>
+                        <p class="text-[11px] text-slate-500">${loc.tag}</p>
+                    </div>
+                    <span class="text-blue-400 group-hover:translate-x-0.5 transition-transform shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </span>
+                </a>
+            `).join('');
+        }
+
+        function switchTab(tabName) {
+            const tabs = ['quinta', 'sexta', 'info'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                const panel = document.getElementById(`panel-${t}`);
+                if (t === tabName) {
+                    btn.classList.add('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-950/50');
+                    btn.classList.remove('text-slate-400', 'hover:text-slate-200');
+                    btn.setAttribute('aria-selected', 'true');
+                    panel.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-950/50');
+                    btn.classList.add('text-slate-400', 'hover:text-slate-200');
+                    btn.setAttribute('aria-selected', 'false');
+                    panel.classList.add('hidden');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimelines();
+            renderQuickMaps();
+            updateProgressCounter();
+        });
+    </script>
+</body>
+</html>
