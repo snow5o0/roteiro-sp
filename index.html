@@ -530,7 +530,7 @@
 
   <section id="tab-sex" class="tab-panel">
     <div class="section-head">
-      <h2>Liberdade, MASP & Embarque</h2>
+      <h2>Liberdade, IMS Paulista & Embarque</h2>
       <span>7 etapas</span>
     </div>
 
@@ -573,7 +573,7 @@
         </div>
         <button class="check-btn" onclick="toggleDone('s3')">✓</button>
       </div>
-      <div class="card-desc">Metrô Japão-Liberdade até Trianon-Masp ou Consolação. Almoço no casarão histórico do McDonald's na Av. Paulista, 1811.</div>
+      <div class="card-desc">Metrô Japão-Liberdade até Consolação ou Trianon-Masp. Almoço no casarão histórico do McDonald's na Av. Paulista, 1811.</div>
       <div class="tags">
         <span class="tag blue">Linha 1-Azul</span>
         <span class="tag green">Linha 2-Verde</span>
@@ -585,16 +585,16 @@
       <div class="card-header">
         <div>
           <span class="time-pill">14h00 – 17h00</span>
-          <div class="card-title">4. Tarde no MASP e Avenida Paulista</div>
+          <div class="card-title">4. Tarde no IMS Paulista</div>
         </div>
         <button class="check-btn" onclick="toggleDone('s4')">✓</button>
       </div>
-      <div class="card-desc">Caminhada de 5 min do Méqui 1000 até o MASP (garanta ingresso online antecipado) + passeio pelo vão livre e Avenida Paulista.</div>
+      <div class="card-desc">Caminhada de 7 min do Méqui 1000 até o Instituto Moreira Salles (Av. Paulista, 2424). Exposições de fotografia e arte contemporânea com entrada gratuita + passeio pela Paulista.</div>
       <div class="tags">
-        <span class="tag">🚶 A pé (5 min)</span>
-        <span class="tag">🎟️ Ingresso online</span>
+        <span class="tag">🚶 A pé (7 min)</span>
+        <span class="tag free">Entrada Gratuita</span>
       </div>
-      <a class="map-link" href="https://maps.google.com/?q=MASP+Avenida+Paulista+Sao+Paulo" target="_blank">📍 Abrir Maps</a>
+      <a class="map-link" href="https://maps.google.com/?q=IMS+Paulista+Avenida+Paulista+2424+Sao+Paulo" target="_blank">📍 Abrir IMS Paulista</a>
     </div>
 
     <div class="card" data-id="s5">
@@ -605,7 +605,7 @@
         </div>
         <button class="check-btn" onclick="toggleDone('s5')">✓</button>
       </div>
-      <div class="card-desc">Voltar de metrô até a Sé e ir ao quarto na Rua Riachuelo tomar banho, fechar malas e avisar a anfitriã Debora sobre a saída.</div>
+      <div class="card-desc">Pegar o metrô bem ao lado do IMS (Estação Consolação) até a Sé e ir ao quarto na Rua Riachuelo tomar banho, fechar malas e avisar a anfitriã Debora.</div>
       <div class="tags">
         <span class="tag green">Linha 2-Verde</span>
         <span class="tag blue">Linha 1-Azul</span>
@@ -649,7 +649,7 @@
       <h3>🚇 Guia Rápido de Baldeações</h3>
       <ul>
         <li><strong>Sé → Baixo Augusta (Quinta):</strong> Linha 3-Vermelha (sentido Barra Funda) até <em>República</em> → troca para Linha 4-Amarela (sentido Vila Sônia) por 1 estação até <em>Higienópolis-Mackenzie</em>.</li>
-        <li><strong>Liberdade → Paulista / Méqui 1000 (Sexta):</strong> Linha 1-Azul na <em>Japão-Liberdade</em> (sentido Jabaquara) até <em>Paraíso</em> → troca para Linha 2-Verde (sentido Vila Madalena) até <em>Trianon-Masp</em> ou <em>Consolação</em>.</li>
+        <li><strong>Liberdade → Méqui 1000 / IMS (Sexta):</strong> Linha 1-Azul na <em>Japão-Liberdade</em> (sentido Jabaquara) até <em>Paraíso</em> → troca para Linha 2-Verde (sentido Vila Madalena) até <em>Consolação</em>.</li>
         <li><strong>Sé → Aeroporto GRU (Sexta 18h20):</strong> Linha 1-Azul na <em>Sé</em> (sentido Tucuruvi) por 2 estações até <em>Luz</em> → plataforma do <strong>Expresso Aeroporto (Linha 13-Jade)</strong> que sai às 19h00.</li>
       </ul>
     </div>
@@ -675,7 +675,7 @@
 </main>
 
 <script>
-  const STORAGE_KEY = 'roteiro_sp_snow_v2';
+  const STORAGE_KEY = 'roteiro_sp_snow_v3';
   let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 
   function applyState() {
